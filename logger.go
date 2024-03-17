@@ -128,8 +128,13 @@ func (l Logger) Printj(j log.JSON) {
 	l.logJSON(l.log.WithLevel(zerolog.NoLevel).Str("level", "-"), j)
 }
 
+func (w InfoWriter) Write(p []byte) (n int, err error) {
+	(*w.Logger).Info().Msg(string(p))
+	return len(p), nil
+}
+
 func (l Logger) Output() io.Writer {
-	return l.log
+	return InfoWriter{&l.log}
 }
 
 func (l *Logger) SetOutput(newOut io.Writer) {
