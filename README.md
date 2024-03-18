@@ -14,6 +14,10 @@ add your go.mod
 ```
 replace github.com/ziflex/lecho/v3 => github.com/satoof2/lecho/v3 v3.5.0
 ```
+
+```
+go mod tidy
+```
 ## Quick start
 
 ```go
