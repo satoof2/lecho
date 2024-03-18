@@ -128,6 +128,10 @@ func (l Logger) Printj(j log.JSON) {
 	l.logJSON(l.log.WithLevel(zerolog.NoLevel).Str("level", "-"), j)
 }
 
+type InfoWriter struct {
+	Logger *zerolog.Logger
+}
+
 func (w InfoWriter) Write(p []byte) (n int, err error) {
 	(*w.Logger).Info().Msg(string(p))
 	return len(p), nil
