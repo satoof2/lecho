@@ -10,12 +10,10 @@ For Echo v4:
 go get github.com/ziflex/lecho/v3
 ```
 
-For Echo v3:
-
+add your go.mod
 ```
-go get github.com/ziflex/lecho
+replace github.com/ziflex/lecho/v3 => github.com/satoof2/lecho/v3 v3.5.0
 ```
-
 ## Quick start
 
 ```go
